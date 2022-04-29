@@ -21,3 +21,4 @@ func main() {
 // - main
 // - init ( implicitly called )
 // _ side effect import
+// log package from stdlib

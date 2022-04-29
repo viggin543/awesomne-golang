@@ -121,3 +121,5 @@ func (m rssMatcher) retrieve(feed *search.Feed) (*rssDocument, error) {
 // - private methods
 // - unmarshalling a json using reflection
 // - duck typing
+// - cyclic dependencies
+// who calls Search ?

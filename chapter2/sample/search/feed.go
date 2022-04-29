@@ -32,3 +32,8 @@ func RetrieveFeeds() ([]*Feed, error) {
 
 	return feeds, err
 }
+
+// public function declaration
+// returning two values from a function
+// defer
+// json unmarshalling using reflection

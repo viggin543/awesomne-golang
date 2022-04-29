@@ -59,7 +59,7 @@ func Register(feedType string, matcher Matcher) {
 // - channel
 // - make ram allocation
 // - - map zero value is nil
-// - iteration
+// - iteration over a slice
 // - calling a go routine
 // - closures
 // - a WaitGroup similar to  CountDownLatch, Semaphore synchronization primitive. The old way.

@@ -59,6 +59,7 @@ func Register(feedType string, matcher Matcher) {
 // - channel
 // - make ram allocation
 // - - map zero value is nil
+// - - number,string,bool, reference zero values
 // - iteration over a slice
 // - calling a go routine
 // - closures

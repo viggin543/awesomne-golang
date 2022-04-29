@@ -33,7 +33,8 @@ func RetrieveFeeds() ([]*Feed, error) {
 	return feeds, err
 }
 
-// public function declaration
-// returning two values from a function
-// defer
-// json unmarshalling using reflection
+// - public function declaration
+// - returning two values from a function
+// - - returning an error as a second return var is a common golang practice
+// - defer
+// - json unmarshalling using reflection

@@ -7,16 +7,6 @@ import (
 
 var matchers = make(map[string]Matcher)
 
-// - private package variable
-// - public method
-// - if statement
-// - := sugar
-// - pointer type
-// - channel
-// - make ram allocation
-// - iteration
-// calling a go routine
-
 func Run(searchTerm string) {
 	feeds, err := RetrieveFeeds()
 	if err != nil {
@@ -58,3 +48,19 @@ func Register(feedType string, matcher Matcher) {
 	log.Println("Register", feedType, "matcher")
 	matchers[feedType] = matcher
 }
+
+// - private package variable
+// - a map
+// - map access
+// - public method
+// - if statement
+// - := sugar
+// - pointer type
+// - channel
+// - make ram allocation
+// - iteration
+// - calling a go routine
+// - closures
+// - a WaitGroup similar to  CountDownLatch, Semaphore synchronization primitive. The old way.
+// - who calls Register ?
+// async flow of Run

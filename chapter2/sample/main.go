@@ -19,4 +19,5 @@ func main() {
 // - packages
 // - import
 // - main
-// - init
+// - init ( implicitly called )
+// _ side effect import

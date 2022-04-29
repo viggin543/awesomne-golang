@@ -116,3 +116,7 @@ func (m rssMatcher) retrieve(feed *search.Feed) (*rssDocument, error) {
 	err = xml.NewDecoder(resp.Body).Decode(&document)
 	return &document, err
 }
+
+// - private structs
+// - unmarshalling a json using reflection
+// - duck typing

@@ -38,3 +38,5 @@ func RetrieveFeeds() ([]*Feed, error) {
 // - - returning an error as a second return var is a common golang practice
 // - defer
 // - json unmarshalling using reflection
+// named return variables
+// embed data in go binary

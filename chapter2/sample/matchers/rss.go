@@ -118,5 +118,6 @@ func (m rssMatcher) retrieve(feed *search.Feed) (*rssDocument, error) {
 }
 
 // - private structs
+// - private methods
 // - unmarshalling a json using reflection
 // - duck typing

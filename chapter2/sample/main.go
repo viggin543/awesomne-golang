@@ -21,4 +21,7 @@ func main() {
 // - main
 // - init ( implicitly called )
 // _ side effect import
-// log package from stdlib
+// - log package from stdlib
+// - - importing from stdlib vs other packages
+// - - GOROOT and GOPATH env vars
+// - - go  env

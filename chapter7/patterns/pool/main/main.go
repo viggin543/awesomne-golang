@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/goinaction/code/chapter7/patterns/pool"
+	"github.com/viggin543/awesomne-golang/code/chapter7/patterns/pool"
 )
 
 const (

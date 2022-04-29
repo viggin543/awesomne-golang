@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/goinaction/code/chapter7/patterns/work"
+	"github.com/viggin543/awesomne-golang/code/chapter7/patterns/work"
 )
 
 // names provides a set of names to display.

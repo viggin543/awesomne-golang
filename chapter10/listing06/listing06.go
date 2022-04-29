@@ -3,7 +3,7 @@
 package main
 
 import (
-	"github.com/goinaction/code/chapter10/listing06/pubsub"
+	"github.com/viggin543/awesomne-golang/code/chapter10/listing06/pubsub"
 )
 
 // publisher is an interface to allow this package to mock the

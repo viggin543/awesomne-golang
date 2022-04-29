@@ -5,7 +5,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/goinaction/code/chapter5/listing64/counters"
+	"github.com/viggin543/awesomne-golang/code/chapter5/listing64/counters"
 )
 
 // main is the entry point for the application.

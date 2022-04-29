@@ -1,187 +1,187 @@
 [
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1001",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1008",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1006",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1007",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1057",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1021",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1012",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=1003",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=2",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=3",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=5",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=13",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=46",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=7",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=10",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=39",
-	"type" : "rss"
-},
-{
-	"site" : "npr",
-	"link" : "http://www.npr.org/rss/rss.php?id=43",
-	"type" : "rss"
-},
-{
-	"site" : "bbci",
-	"link" : "http://feeds.bbci.co.uk/news/rss.xml",
-	"type" : "rss"
-},
-{
-	"site" : "bbci",
-	"link" : "http://feeds.bbci.co.uk/news/business/rss.xml",
-	"type" : "rss"
-},
-{
-	"site" : "bbci",
-	"link" : "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_topstories.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_world.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_us.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_allpolitics.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_crime.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_tech.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_health.rss",
-	"type" : "rss"
-},
-{
-	"site" : "cnn",
-	"link" : "http://rss.cnn.com/rss/cnn_topstories.rss",
-	"type" : "rss"
-},
-{
-	"site" : "foxnews",
-	"link" : "http://feeds.foxnews.com/foxnews/opinion?format=xml",
-	"type" : "rss"
-},
-{
-	"site" : "foxnews",
-	"link" : "http://feeds.foxnews.com/foxnews/politics?format=xml",
-	"type" : "rss"
-},
-{
-	"site" : "foxnews",
-	"link" : "http://feeds.foxnews.com/foxnews/national?format=xml",
-	"type" : "rss"
-},
-{
-	"site" : "foxnews",
-	"link" : "http://feeds.foxnews.com/foxnews/world?format=xml",
-	"type" : "rss"
-},
-{
-	"site" : "nbcnews",
-	"link" : "http://feeds.nbcnews.com/feeds/topstories",
-	"type" : "rss"
-},
-{
-	"site" : "nbcnews",
-	"link" : "http://feeds.nbcnews.com/feeds/usnews",
-	"type" : "rss"
-},
-{
-	"site" : "nbcnews",
-	"link" : "http://rss.msnbc.msn.com/id/21491043/device/rss/rss.xml",
-	"type" : "rss"
-},
-{
-	"site" : "nbcnews",
-	"link" : "http://rss.msnbc.msn.com/id/21491571/device/rss/rss.xml",
-	"type" : "rss"
-},
-{
-	"site" : "nbcnews",
-	"link" : "http://rss.msnbc.msn.com/id/28180066/device/rss/rss.xml",
-	"type" : "rss"
-}
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/templates/story/story.php?storyId=1032135",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/templates/story/story.php?storyId=4463532",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/templates/story/story.php?storyId=5440223",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/29/1095442555/echoes-of-2006-jazz-fest-returns-to-new-orleans-for-2022",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/28/1094807744/can-classical-music-really-be-inclusive-composer-jessie-montgomery-thinks-so",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/24/1094256223/under-greg-tate-musical-possibilities-were-limitless",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/09/1091730938/lets-talk-about-wet-leg",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/11/1090327490/aldous-harding-warm-chris-review-voice-authenticity",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2019/06/17/526657674/vikings-choice",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/22/1093803848/on-just-like-that-bonnie-raitt-is-a-model-of-continuity",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/03/18/1087238345/i-love-selling-out-charli-xcx-on-the-volatile-pop-of-crash",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/sections/pictureshow/2022/04/26/1094679909/photos-more-than-5-million-have-fled-ukraine-as-russias-invasion-continues",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/28/1095209856/university-of-california-native-american-tuition-fees-waive",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/28/1095123465/the-masks-the-cdc-and-the-judge-a-battle-brewing-since-1944",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2022/04/28/1094567222/in-dua-lipas-ever-expanding-world-theres-no-time-limit-and-theres-no-what-ifs",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "https://www.npr.org/2019/06/17/526653451/bob-boilens-playlist",
+    "type": "rss"
+  },
+  {
+    "site": "npr",
+    "link": "http://www.npr.org/rss/rss.php?id=43",
+    "type": "rss"
+  },
+  {
+    "site": "bbci",
+    "link": "http://feeds.bbci.co.uk/news/rss.xml",
+    "type": "rss"
+  },
+  {
+    "site": "bbci",
+    "link": "http://feeds.bbci.co.uk/news/business/rss.xml",
+    "type": "rss"
+  },
+  {
+    "site": "bbci",
+    "link": "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_topstories.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_world.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_us.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_allpolitics.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_crime.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_tech.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_health.rss",
+    "type": "rss"
+  },
+  {
+    "site": "cnn",
+    "link": "http://rss.cnn.com/rss/cnn_topstories.rss",
+    "type": "rss"
+  },
+  {
+    "site": "foxnews",
+    "link": "http://feeds.foxnews.com/foxnews/opinion?format=xml",
+    "type": "rss"
+  },
+  {
+    "site": "foxnews",
+    "link": "http://feeds.foxnews.com/foxnews/politics?format=xml",
+    "type": "rss"
+  },
+  {
+    "site": "foxnews",
+    "link": "http://feeds.foxnews.com/foxnews/national?format=xml",
+    "type": "rss"
+  },
+  {
+    "site": "foxnews",
+    "link": "http://feeds.foxnews.com/foxnews/world?format=xml",
+    "type": "rss"
+  },
+  {
+    "site": "nbcnews",
+    "link": "http://feeds.nbcnews.com/feeds/topstories",
+    "type": "rss"
+  },
+  {
+    "site": "nbcnews",
+    "link": "http://feeds.nbcnews.com/feeds/usnews",
+    "type": "rss"
+  },
+  {
+    "site": "nbcnews",
+    "link": "http://rss.msnbc.msn.com/id/21491043/device/rss/rss.xml",
+    "type": "rss"
+  },
+  {
+    "site": "nbcnews",
+    "link": "http://rss.msnbc.msn.com/id/21491571/device/rss/rss.xml",
+    "type": "rss"
+  },
+  {
+    "site": "nbcnews",
+    "link": "http://rss.msnbc.msn.com/id/28180066/device/rss/rss.xml",
+    "type": "rss"
+  }
 ]

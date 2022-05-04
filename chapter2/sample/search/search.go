@@ -52,6 +52,7 @@ func Register(feedType string, matcher Matcher) {
 // - private package variable
 // - a map
 // - map access
+// closure - line 30 -> wait group
 // - public method
 // - if statement
 // - := sugar

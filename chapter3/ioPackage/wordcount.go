@@ -1,4 +1,3 @@
-// Sample program to show how to show you how to briefly work with io.
 package main
 
 import (
@@ -6,10 +5,10 @@ import (
 	"io/ioutil"
 	"os"
 
+	// cross package reference
 	"github.com/viggin543/awesomne-golang/code/chapter3/words"
 )
 
-// main is the entry point for the application.
 func main() {
 	filename := os.Args[1]
 

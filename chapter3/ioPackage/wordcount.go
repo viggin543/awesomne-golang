@@ -18,7 +18,7 @@ func main() {
 		return
 	}
 
-	text := string(contents)
+	text := string(contents) // type casting
 
 	count := words.CountWords(text)
 	fmt.Printf("There are %d words in your text. \n", count)

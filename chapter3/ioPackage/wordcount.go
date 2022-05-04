@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
+	// b4 go modules -> GOPATH/src/github.com/goinaction/code/chapter3/words.
 	// cross package reference
 	"github.com/viggin543/awesomne-golang/code/chapter3/words"
 )

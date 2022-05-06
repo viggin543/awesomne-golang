@@ -78,3 +78,5 @@ func foo(ints []int) { // a slice is a reference type, it always passed by refer
 	ints[0] = -1
 	fmt.Println(ints)
 }
+
+// prefer arrays to slices !

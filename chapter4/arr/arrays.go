@@ -78,29 +78,3 @@ func foo(array [1e6]int) { // this will copy 8 megabytes on every func call. ouc
 	array[0] = 1
 	fmt.Println(len(array))
 }
-
-func PassingMapsToFunctions() {
-	m := map[string]int{"foo": 1}
-	bar(m)
-	fmt.Println(m["foo"])
-
-}
-
-func bar(m map[string]int) {
-	m["foo"] = 2
-}
-
-type banana struct {
-	x int
-}
-
-func PassStructsToMaps() {
-	b := banana{x: -1}
-	bazz(b)
-	fmt.Println(b.x)
-}
-
-// structs are passed by value, what's the zero value of a banana ?
-func bazz(b banana) {
-	b.x = 123
-}

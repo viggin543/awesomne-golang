@@ -29,11 +29,3 @@ func TestMultiDimArr(t *testing.T) {
 func BenchmarkPassingLargeArrByValue(b *testing.B) {
 	PassingSlicesToFunctions()
 }
-
-func TestPassingMapsToFunctions(t *testing.T) {
-	PassingMapsToFunctions()
-}
-
-func TestPassStructsToMaps(t *testing.T) {
-	PassStructsToMaps()
-}

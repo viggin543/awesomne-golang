@@ -14,4 +14,6 @@ func TestSlicesCanGrow(t *testing.T) {
 	SlicingASlice()
 	IterateASlice()
 	IterationTrap()
+	GoodOldForLoop()
+	PassingASliceToAFunciton()
 }

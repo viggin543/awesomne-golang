@@ -56,8 +56,25 @@ func IterateASlice() {
 func IterationTrap() {
 	slice := []int{10, 20, 30, 40}
 	for index, value := range slice {
-		//value is a copy of slice[i]. its address is the same every iteration !!!
+		//value is a copy of slice[i]. its address is the same every iteration !!! don't ever return the address of the for loop value variable !
 		fmt.Printf("Value: %d  Value-Addr: %X  ElemAddr: %X\n",
 			value, &value, &slice[index])
 	}
+}
+
+func GoodOldForLoop() {
+	for index := 2; index < len([]int{10, 20, 30, 40}); index++ {
+		fmt.Printf("Index: %d  Value: %d\n", index, []int{10, 20, 30, 40}[index])
+	}
+}
+
+func PassingASliceToAFunciton() {
+	a := []int{1e6: 9}
+	foo(a)
+	fmt.Println(a[0])
+}
+
+func foo(ints []int) { // a slice is a reference type, it always passed by reference, and its zero value is nil
+	ints[0] = -1
+	fmt.Println(ints)
 }

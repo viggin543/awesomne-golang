@@ -1,5 +1,4 @@
 // Sample program to show how to write a simple version of curl using
-// the io.Reader and io.Writer interface support.
 package main
 
 import (
@@ -9,7 +8,6 @@ import (
 	"os"
 )
 
-// init is called before main.
 func init() {
 	if len(os.Args) != 2 {
 		fmt.Println("Usage: ./example2 <url>")
@@ -17,17 +15,15 @@ func init() {
 	}
 }
 
-// main is the entry point for the application.
 func main() {
-	// Get a response from the web server.
+	//http.DefaultClient =
+	// add an option to send post requests
 	r, err := http.Get(os.Args[1])
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-
-	// Copies from the Body to Stdout.
-	io.Copy(os.Stdout, r.Body)
+	_, _ = io.Copy(os.Stdout, r.Body)
 	if err := r.Body.Close(); err != nil {
 		fmt.Println(err)
 	}

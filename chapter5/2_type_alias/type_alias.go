@@ -12,10 +12,13 @@ func (d *duration) pretty() string {
 	return fmt.Sprintf("Duration: %d", *d)
 }
 
-// main is the entry point for the application.
 func main() {
-	duration(42).pretty()
+	//[idea tip] alt+cmd+n inline a variable
+	d := duration(42)
+	d.pretty()
+	//d = int(1) -> will this compile ?
 
+	// try to inline d
 	// ./listing46.go:17: cannot call pointer method on duration(42)
 	// ./listing46.go:17: cannot take the address of duration(42)
 }

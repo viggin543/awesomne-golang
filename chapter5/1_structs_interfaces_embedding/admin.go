@@ -5,21 +5,21 @@ import (
 )
 
 type notifier interface {
-	notify()
+	notify() // [idea tip] find implementation cmd+alt+B
 }
 
 type admin struct {
-	user  // embedding
+	user  // embedding  user is called the "Inner type" and admin the "Outer type"
 	level string
 }
 
-func (a *admin) notify() {
+func (a *admin) notify() { // overriding the embedded method
 	fmt.Printf("Sending admin email to %s<%s>\n",
 		a.name,
 		a.email)
 }
 
-// sendNotification accepts values that implement the notifier interface
-func sendNotification(n notifier) {
+//  a polymorphic function ( accepts different implementations of notifier )
+func sendNotification(n notifier) { // references vs values
 	n.notify()
 }

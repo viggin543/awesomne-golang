@@ -13,12 +13,12 @@ func TestName(t *testing.T) {
 
 	// The embedded inner type's implementation of the
 	// interface is NOT "promoted" to the outer type.
-	sendNotification(&ad)
+	sendNotification(&ad) // why passing a reference here ? ( TBD in interfaces section )
 
 	// We can access the inner type's method directly.
 	ad.user.notify() // composition vs inheritance
 
 	// The inner type's method is NOT promoted.
 	ad.notify() // you can sort of call this "overriding"
-	// what would this call if we remove the embedding of a user in an admin ?
+	// what would this call if admin did not implement a notifier interface ?
 }

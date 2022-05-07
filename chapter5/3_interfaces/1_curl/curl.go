@@ -31,6 +31,9 @@ func main() {
 	// this is called duck typing
 	// this makes golang much more flexible than Java,Kotlin,Scala,C# and other "type safe langs"
 	// also notice is statically typed ( unlike Java... )
+	// Internally golang uses Method sets to  define the set of methods that are associated with
+	// "values" or "pointers" of a given type.
+	// quack quack !
 }
 
 func copySomethingElse() {

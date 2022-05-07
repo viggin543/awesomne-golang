@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	filename := os.Args[1]
+	filename := os.Args[1] // [idea tip] -> run configuration
 
 	contents, err := ioutil.ReadFile(filename)
 	if err != nil {

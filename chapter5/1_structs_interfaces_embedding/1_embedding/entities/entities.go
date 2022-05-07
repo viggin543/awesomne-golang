@@ -4,8 +4,9 @@ package entities
 
 // user defines a user in the program.
 type user struct {
-	Name  string
-	Email string
+	Name   string
+	Email  string
+	banana string // a privvate struct field
 }
 
 // Admin defines an admin in the program.

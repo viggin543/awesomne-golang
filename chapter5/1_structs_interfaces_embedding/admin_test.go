@@ -21,4 +21,6 @@ func TestName(t *testing.T) {
 	// The inner type's method is NOT promoted.
 	ad.notify() // you can sort of call this "overriding"
 	// what would this call if admin did not implement a notifier interface ?
+	// would admin be a notifier then ?
+	// YES, this is called "inner type promotion" in golang
 }

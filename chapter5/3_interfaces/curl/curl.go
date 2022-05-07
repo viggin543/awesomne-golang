@@ -2,6 +2,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"net/http"
@@ -21,7 +22,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	// io.Copy receives an interface param ( body )
+	// io.Copy receives interface params
 	_, _ = io.Copy(os.Stdout, r.Body)      // r.Body is a struct pointer that implements the Reader and Closer interfaces
 	if err := r.Body.Close(); err != nil { // body.Close will call the method of the struct implementing Closer interface
 		fmt.Println(err)
@@ -30,4 +31,11 @@ func main() {
 	// this is called duck typing
 	// this makes golang much more flexible than Java,Kotlin,Scala,C# and other "type safe langs"
 	// also notice is statically typed ( unlike Java... )
+}
+
+func copySomethingElse() {
+	var b bytes.Buffer // why b is not nil ?
+	b.Write([]byte("Hello"))
+	_, _ = fmt.Fprintf(&b, "World!") // why Fprintf receives a ref to b ?
+	_, _ = io.Copy(os.Stdout, &b)    // why io.Copy receives a ref to b ?
 }

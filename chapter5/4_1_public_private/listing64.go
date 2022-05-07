@@ -4,19 +4,14 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/viggin543/awesomne-golang/chapter5/listing64/counters"
+	"github.com/viggin543/awesomne-golang/chapter5/4_public_private/counters"
 )
 
 // main is the entry point for the application.
 func main() {
 	// Create a variable of the unexported type and initialize
 	// the value to 10.
-	counter := counters.AlertCounter(10)
-
-	// ./listing64.go:15: cannot refer to unexported name
-	//                                         counters.alertCounter
-	// ./listing64.go:15: undefined: counters.alertCounter
+	counter := counters.AlertCounter(10) // change AlertCounter to be private
 
 	fmt.Printf("Counter: %d\n", counter)
 }

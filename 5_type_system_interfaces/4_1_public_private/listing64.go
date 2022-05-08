@@ -4,7 +4,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/viggin543/awesomne-golang/chapter5/4_public_private/counters"
+	"github.com/viggin543/awesomne-golang/chapter5/4_1_public_private/counters"
 )
 
 // main is the entry point for the application.

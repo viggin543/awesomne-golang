@@ -42,11 +42,24 @@ func TestGenericSlice_Print(t *testing.T) {
 }
 
 func TestBox_equals(t *testing.T) {
-	var x = new(Box[int])
+	var x = new(Box[int]) // generic structs must be instantiated ( using new or make, like channels )
 	x.Val = 123
 	assert.True(t, x.equals(123))
 }
 
 func TestProcess(t *testing.T) {
 	Process(int16(3))
+}
+
+// Example of Type Chaining
+// U is defined in terms of T
+func ToChan[U ~[]T, T any](t U) <-chan T {
+	c := make(chan T)
+	go func() {
+		defer close(c)
+		for _, x := range t {
+			c <- x
+		}
+	}()
+	return c
 }

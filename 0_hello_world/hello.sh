@@ -17,3 +17,5 @@ file $GOPATH/bin/0_hello_world
 go run github.com/viggin543/awesomne-golang/0_hello_world@latest
 
 ###################################### releasing binaries and libraries was never so easy !!   ##################################
+
+# what would have happened if this was a private repo ?

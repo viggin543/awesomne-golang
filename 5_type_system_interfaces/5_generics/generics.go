@@ -16,6 +16,8 @@ func Reduce[T any, R any](t []T, f func(t T, r R) R, zero R) R {
 	panic("implement me")
 }
 
+// todo: implement Flatmap
+
 // [idea tip] -> step into comparable implementation ( cmd + b )
 // notice "int64 | float64" a union type
 

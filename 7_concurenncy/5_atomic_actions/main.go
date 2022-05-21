@@ -30,7 +30,7 @@ func incCounter() {
 
 	for count := 0; count < 2; count++ {
 		// Atomic increment
-		// why Atomic increment and not just using another mutex (sync.WaitGroup) ?
+		// why Atomic increment and not just using a mutex ?
 		atomic.AddInt64(&counter, 1)
 		// Yield the thread and be placed back in queue.
 		runtime.Gosched()

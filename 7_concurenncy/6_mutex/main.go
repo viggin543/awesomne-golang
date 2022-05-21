@@ -13,7 +13,7 @@ var (
 	counter int
 
 	wg    sync.WaitGroup
-	mutex sync.Mutex
+	mutex sync.Mutex // sync package has lots of good stuff...
 )
 
 func main() {

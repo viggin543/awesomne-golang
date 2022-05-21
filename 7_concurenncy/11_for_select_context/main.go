@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"math/rand"
 	"time"
 )
 
@@ -10,24 +12,32 @@ import (
 // clicking on the magic link should log you in
 // browser preforms long polling waiting for you to click on the email
 
+func main() {
+	verification, _ := LongPollingAwaitEmailVerification(context.Background(), "session_idd")
+	fmt.Println("welcome !!")
+	fmt.Println(verification)
+}
+
 func LongPollingAwaitEmailVerification(ctx context.Context, sessionId string) (*AwaitLoginResponse, error) {
-	c, _ := context.WithDeadline(ctx, time.Now().Add(time.Second))
+	c, _ := context.WithDeadline(ctx, time.Now().Add(30*time.Second))
 	ticker := ImmediateTicker(c, time.Second)
 	for {
 		select { // A NEW KEYWORD
 		case <-c.Done():
+			fmt.Println("timed out !")
 			return &AwaitLoginResponse{Status: "waiting"}, nil
 		case <-ticker:
 			status, token := IsEmailVerified(sessionId)
 			if status != "waiting" {
 				if status == "valid" {
-					dropCookie(ctx)
+					dropCookie(ctx, token)
 				}
 				return &AwaitLoginResponse{
 					Status:      status,
 					AccessToken: token,
 				}, nil
 			}
+			fmt.Println("waiting for user to click email..")
 		}
 	}
 }
@@ -52,11 +62,14 @@ func ImmediateTicker(ctx context.Context, interval time.Duration) <-chan time.Ti
 }
 
 func IsEmailVerified(sessionId string) (string, string) {
-	panic("implement me")
+	if rand.Intn(10) == 5 {
+		return "valid", "signed_token"
+	}
+	return "waiting", ""
 }
 
-func dropCookie(ctx context.Context) {
-
+func dropCookie(ctx context.Context, token string) {
+	fmt.Println("dropping a cookie !!")
 }
 
 type AwaitLoginResponse struct {

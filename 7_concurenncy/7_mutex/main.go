@@ -31,7 +31,7 @@ func incCounter() {
 
 	for count := 0; count < 2; count++ {
 		mutex.Lock() // this is much slower than using atomic package
-		{ // parenthesis just to emphasize below block, no functional cause to add them here.
+		{            // parenthesis just to emphasize below block, no functional cause to add them here.
 			value := counter
 			// Yield the thread and be placed back in queue.
 			runtime.Gosched()

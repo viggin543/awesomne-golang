@@ -9,35 +9,28 @@ import (
 	"time"
 )
 
-// wg is used to wait for the program to finish.
 var wg sync.WaitGroup
 
 func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-// main is the entry point for all Go programs.
 func main() {
-	// Create an unbuffered channel.
+	// Create an unbuffered channel. ( unbuffered -> no spare room, every write will block until someone reads from the channel)
 	court := make(chan int)
 
-	// Add a count of two, one for each goroutine.
 	wg.Add(2)
 
-	// Launch two players.
 	go player("Nadal", court)
 	go player("Djokovic", court)
 
-	// Start the set.
 	court <- 1
 
-	// Wait for the game to finish.
 	wg.Wait()
 }
 
 // player simulates a person playing the game of tennis.
 func player(name string, court chan int) {
-	// Schedule the call to Done to tell main we are done.
 	defer wg.Done()
 
 	for {

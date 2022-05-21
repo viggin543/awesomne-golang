@@ -27,5 +27,5 @@ func TestMultiDimArr(t *testing.T) {
 
 // go benchmark tool is awesome !!!
 func BenchmarkPassingLargeArrByValue(b *testing.B) {
-	PassingSlicesToFunctions()
+	PassingArraysToFunctions()
 }

@@ -6,7 +6,7 @@ func DeclaringAMap() (map[string]string, map[int][]string) {
 	dict := make(map[string]string)                                 // no reason to use `new` since map is a reference type
 	dict = map[string]string{"Red": "#da1337", "Orange": "#e95a22"} // map literal
 	dict2 := map[int][]string{}                                     // is dict2 nil ?
-	dict2[0] = []string{"tak"}
+	dict2[0] = []string{"tak"}                                      // if dict2 is nil this will cause a panic
 	return dict, dict2
 }
 
@@ -30,7 +30,7 @@ func isExisting() {
 	_map := map[string]func(){"jump": func() {
 		print("hop") // functions are first class citizens
 	}}
-	value, exists := _map["jump"] // common pattern
+	value, exists := _map["jump"] // common pattern, bool return value ( second )
 	if exists {
 		value()
 	}
@@ -40,6 +40,7 @@ func isExisting() {
 }
 
 func iteratingOverAMap() {
+	// iteration order is not defined ! maps are un ordered data types !
 	for key, value := range map[string]string{
 		"AliceBlue":   "#f0f8ff",
 		"Coral":       "#ff7F50",

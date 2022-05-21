@@ -30,7 +30,8 @@ func ArrayPointers() {
 	// open debug window to view the pointer addresses
 }
 
-// [tip -> generate test cmd+shift+t]
+// [tip -> generate test/jump to test cmd+shift+t]
+
 func StringArrays() [5]string {
 	var array1 [5]string
 	array2 := [5]string{"Red", "Blue", "Green", "Yellow", "Pink"}
@@ -66,7 +67,7 @@ func MultiDimArr() {
 
 }
 
-func PassingSlicesToFunctions() {
+func PassingArraysToFunctions() {
 	//  of 8 megabytes.
 	var arr [1e6]int
 	foo(arr)

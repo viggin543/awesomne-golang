@@ -25,8 +25,7 @@ func SliceLiteralWithCapacity() []string {
 func NilSlice() []int {
 	var slice1 []int                  // slice1 is nil
 	var a [2]int                      //can an array be nil ?
-	return append(slice1, a[0], a[1]) // growing a slice
-	// a slice is smart dynamically growing
+	return append(slice1, a[0], a[1]) // growing a slice is smart, its dynamically growing
 }
 
 func EmptySlice() []int {
@@ -74,7 +73,7 @@ func PassingASliceToAFunciton() {
 	fmt.Println(a[0])
 }
 
-func foo(ints []int) { // a slice is a reference type, it always passed by reference, and its zero value is nil
+func foo(ints []int) { // a slice is a reference type, it always passed by reference,nothing is get copied here
 	ints[0] = -1
 	fmt.Println(ints)
 }

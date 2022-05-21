@@ -8,35 +8,24 @@ import (
 	"time"
 )
 
-// wg is used to wait for the program to finish.
 var wg sync.WaitGroup
 
-// main is the entry point for all Go programs.
 func main() {
-	// Create an unbuffered channel.
 	baton := make(chan int)
 
-	// Add a count of one for the last runner.
 	wg.Add(1)
 
-	// First runner to his mark.
 	go Runner(baton)
 
-	// Start the race.
 	baton <- 1
 
-	// Wait for the race to finish.
 	wg.Wait()
 }
 
-// Runner simulates a person running in the relay race.
 func Runner(baton chan int) {
 	var newRunner int
-
-	// Wait to receive the baton.
 	runner := <-baton
 
-	// Start running around the track.
 	fmt.Printf("Runner %d Running With Baton\n", runner)
 
 	// New runner to the line.

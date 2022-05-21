@@ -15,17 +15,12 @@ const (
 	taskLoad         = 10 // Amount of work to process.
 )
 
-// wg is used to wait for the program to finish.
 var wg sync.WaitGroup
 
-// init is called to initialize the package by the
-// Go runtime prior to any other code being executed.
 func init() {
-	// Seed the random number generator.
 	rand.Seed(time.Now().Unix())
 }
 
-// main is the entry point for all Go programs.
 func main() {
 	// Create a buffered channel to manage the task load.
 	tasks := make(chan string, taskLoad)
@@ -38,13 +33,12 @@ func main() {
 
 	// Add a bunch of work to get done.
 	for post := 1; post <= taskLoad; post++ {
-		tasks <- fmt.Sprintf("Task : %d", post)
+		tasks <- fmt.Sprintf("Task : %d", post) // 10 tasks can be writen without any one reading from our channel
 	}
 
 	// Close the channel so the goroutines will quit
 	// when all the work is done.
 	close(tasks)
-
 	// Wait for all the work to get done.
 	wg.Wait()
 }
@@ -57,8 +51,8 @@ func worker(tasks chan string, worker int) {
 
 	for {
 		// Wait for work to be assigned.
-		task, ok := <-tasks
-		if !ok {
+		task, isClosed := <-tasks
+		if !isClosed {
 			// This means the channel is empty and closed.
 			fmt.Printf("Worker: %d : Shutting Down\n", worker)
 			return

@@ -29,7 +29,7 @@ func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
 	return s
 }
 
-// Number interface to be a type constraint
+// Number interface defining a type constraint
 type Number interface {
 	int64 | float64
 }
@@ -69,8 +69,9 @@ type Signal int16 // type override, type alias
 
 func Process[T ~int16](value T) T { // try removing the `~` operator
 	return value - 1
+	// ~ tells the go compiler, any type override that can be reduced to  int16
 }
 
-// ~ tells the go compiler, any type override that can be reduced to  int16
 // generics introduced type constraints which brake the duck typing paradigm.
 // there is no type erasure in golang, unlike java
+// in golang it's possible to get complete type info in runtime using reflection

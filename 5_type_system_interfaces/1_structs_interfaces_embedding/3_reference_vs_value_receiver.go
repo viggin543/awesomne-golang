@@ -6,16 +6,21 @@ import (
 	"time"
 )
 
+// VALUE RECEIVER EXAMPLE
+
 func IpExample() {
 	ip := net.ParseIP("192.0.2.1")
-	// [idea tip] peek implementation
-	// [idea tip] find usages of IP figure how to use it
+	// [idea tip] peek implementation ( cmd + i )
+	// [idea tip] inline find usages of IP figure how to use it
 	_, _ = ip.MarshalText() // <- why the MarshalText has a Value Receiver
 	// when to use value receivers and when reference receivers ??
 	// - value --> no mutation happens
 	// - reference -> mutating type internal state
 	// avoid value receivers on types / structs that occupy a large space since they will be copied on every method call !
+	// avoid having large data types on structs that have methods, ( data struct vs object )
 }
+
+// VALUE RECEIVER EXAMPLE
 
 func TimeExample() time.Time { // time.Time is a struct containing primitive data types
 	now := time.Now()
@@ -23,14 +28,15 @@ func TimeExample() time.Time { // time.Time is a struct containing primitive dat
 	//This is exactly how the standard library implements the Time type.
 	future := now.Add(time.Hour) // peek Add implementation, why a value receiver ?
 	return future
-	// time is special, most structs should not be treated like a primitive and have value receivers
-	// and instead hold some state that can be mutated and have methods with reference recievers
+	// time is special, ita treated like a primitive. ( string, bool )
 }
+
+// REFERENCE RECEIVER EXAMPLE
 
 func FileExample() {
 	file, _ := os.Open("/some/path") // Open factory method should return a Pointer ? or a Value ?
-	file.Name()                      // what receiver should Name method have ?
-	//file is non-primitive. Values of this type are unsafe to be copied
+	file.Name()                      // what receiver should Name() have ?
+	// file is non-primitive. Values of this type are unsafe to be copied
 	// you can close/delete the wrong file.
 	_ = file.Chdir() // what receiver should Chdir have ? even though it does not mutate anything
 	// all "file" methods share the same reference.

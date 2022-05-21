@@ -1,4 +1,4 @@
-package __2_equality
+package __2_structs_equality
 
 import (
 	"github.com/stretchr/testify/assert"
@@ -24,7 +24,7 @@ func TestEquality(t *testing.T) {
 
 	a1 := Person2{Friend: &Person{}}
 	b1 := Person2{Friend: &Person{}}
-	assert.True(t, a1 == b1)
+	assert.True(t, a1 == b1) // [idea tip] => jump to line that failed a test from test console output
 
 	reflect.DeepEqual(a, b) // true
 	//recursive deep equal ( follow pointers )

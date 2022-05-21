@@ -12,9 +12,12 @@ type UsersRepo interface {
 type userRepoImpl struct {
 }
 
-func newUserRepoImpl() UsersRepo { // try deleting one of the methods below
-	return &userRepoImpl{} // notice this method does not return *userRepoImpl
+func newUserRepoImpl() UsersRepo {
+	return &userRepoImpl{} // notice this method returns UsersRepo and not return *userRepoImpl
 }
+
+// try deleting one of the methods below
+// idea tip [implement missing methods]
 
 func (u userRepoImpl) CreateUser(id string, user any) (any, error) {
 	//TODO implement me

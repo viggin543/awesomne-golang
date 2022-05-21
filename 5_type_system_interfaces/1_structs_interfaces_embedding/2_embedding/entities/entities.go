@@ -9,6 +9,6 @@ type user struct {
 }
 
 type Admin struct {
-	user   // The embedded type is unexported.
+	user   // The embedded type is unexported. outside the package no one will know it exists.
 	Rights int
 }

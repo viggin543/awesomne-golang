@@ -3,7 +3,7 @@ package __embedding
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/viggin543/awesomne-golang/chapter5/1_structs_interfaces_embedding/1_embedding/entities"
+	"github.com/viggin543/awesomne-golang/chapter5/1_structs_interfaces_embedding/2_embedding/entities"
 )
 
 // why this main is not executable ?

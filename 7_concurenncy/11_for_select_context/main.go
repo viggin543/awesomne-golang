@@ -14,7 +14,7 @@ func LongPollingAwaitEmailVerification(ctx context.Context, sessionId string) (*
 	c, _ := context.WithDeadline(ctx, time.Now().Add(time.Second))
 	ticker := ImmediateTicker(c, time.Second)
 	for {
-		select {
+		select { // A NEW KEYWORD
 		case <-c.Done():
 			return &AwaitLoginResponse{Status: "waiting"}, nil
 		case <-ticker:

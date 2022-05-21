@@ -10,6 +10,7 @@ import (
 
 //										 shortly discuss:
 //											 - Concurrency versus parallelism
+//														- Concurrency can out reform parallelism  ( GoLang's mantra )
 // 											 - threads and processes
 //											 - os scheduler
 //											 - user space \ kernel space context switching
@@ -50,10 +51,8 @@ func main() {
 
 	fmt.Println("Start Goroutines")
 
-	// Declare an anonymous function and create a goroutine.
 	go func() {
-		// Schedule the call to Done to tell main we are done.
-		defer wg.Done()
+		defer wg.Done() // why defer ? why not calling wg.Done() after printing the alphabet ?
 		for count := 0; count < 3; count++ {
 			for char := 'a'; char < 'a'+26; char++ { // what does 'a'+26 ?
 				fmt.Printf("%c ", char)
@@ -70,9 +69,12 @@ func main() {
 		}
 	}()
 
-	// Wait for the goroutines to finish.
 	fmt.Println("Waiting To Finish")
-	wg.Wait()
+	wg.Wait() // what will happen if we remove this line ?
 
 	fmt.Println("\nTerminating Program")
 }
+
+// above code has three goroutines
+// Capital letters are printed first because the first goroutine finishes super fast
+// before the scheduler swaps it out for the second goroutine

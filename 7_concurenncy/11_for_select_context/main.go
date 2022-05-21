@@ -32,18 +32,19 @@ func LongPollingAwaitEmailVerification(ctx context.Context, sessionId string) (*
 	}
 }
 
-func ImmediateTicker(ctx context.Context, interval time.Duration) <-chan time.Time {
-	ret := make(chan time.Time, 1)
+func ImmediateTicker(ctx context.Context, interval time.Duration) <-chan time.Time { // return a read channel
+	ret := make(chan time.Time, 1) // we create the channel, we are to close it
 	ret <- time.Now()
 	ticket := time.NewTicker(interval)
 	go func() {
+		defer close(ret)
 		defer ticket.Stop()
 		for {
 			select {
 			case <-ctx.Done():
 				return
-			case <-ticket.C:
-				ret <- time.Now()
+			case t := <-ticket.C: // assign a variable and read from a channel
+				ret <- t // write to channel
 			}
 		}
 	}()

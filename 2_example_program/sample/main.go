@@ -1,27 +1,20 @@
 package main
 
 import (
+	//importing from stdlib vs other packages
 	"log"
 	"os"
-
-	_ "github.com/viggin543/awesomne-golang/code/chapter2/sample/matchers"
-	"github.com/viggin543/awesomne-golang/code/chapter2/sample/search"
+	// side effect import ( triggers package init function )
+	_ "github.com/viggin543/awesomne-golang/2_example_program/sample/matchers"
+	"github.com/viggin543/awesomne-golang/2_example_program/sample/search"
 )
 
 func init() {
+	// logging package from standard lib
 	log.SetOutput(os.Stdout)
 }
 
 func main() {
+	// [ida tips] -> step into, back caret, forward caret
 	search.Run("and")
 }
-
-// - packages
-// - import
-// - main
-// - init ( implicitly called )
-// _ side effect import
-// - log package from stdlib
-// - - importing from stdlib vs other packages
-// - - GOROOT and GOPATH env vars
-// - - go  env

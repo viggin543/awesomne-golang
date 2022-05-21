@@ -2,21 +2,19 @@ package search
 
 import (
 	"encoding/json"
-	"github.com/viggin543/awesomne-golang/code/chapter2/sample/data"
+	"github.com/viggin543/awesomne-golang/2_example_program/sample/data"
 	"os"
 )
 
+// compile time variable
 const dataFile = "data/data.json"
 
+// Feed a struct (new data type) with reflection tags
+// structs zero values
 type Feed struct {
 	Name string `json:"site"`
 	URI  string `json:"link"`
 	Type string `json:"type"`
-}
-
-func RetreiveEmeddedFeeds() (feeds []*Feed, err error) {
-	err = json.Unmarshal(data.Feeds, &feeds)
-	return
 }
 
 func RetrieveFeeds() ([]*Feed, error) {
@@ -25,18 +23,20 @@ func RetrieveFeeds() ([]*Feed, error) {
 		return nil, err
 	}
 
+	// defer serves a similar cause as a finally clause/
 	defer file.Close()
 
-	var feeds []*Feed
+	var feeds []*Feed // why []*Feed and not []Feed ?
+	// json unmarshalling ( string\bytes to data type )
+	//[tip] -> json to struct https://mholt.github.io/json-to-go/
 	err = json.NewDecoder(file).Decode(&feeds)
 
 	return feeds, err
 }
 
-// - public function declaration
-// - returning two values from a function
-// - - returning an error as a second return var is a common golang practice
-// - defer
-// - json unmarshalling using reflection
-// named return variables
-// embed data in go binary
+func RetreiveEmeddedFeeds() (feeds []*Feed, err error) { // named return variables
+	// modern way (sine 1.16) to embed data in golang projects
+	// why this is useful ?
+	err = json.Unmarshal(data.Feeds, &feeds)
+	return // naked return
+}

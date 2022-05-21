@@ -21,5 +21,5 @@ var d *PostgresDriver
 //because the sql package can’t know about the drivers that exist when it’s compiled.
 func init() {
 	d = new(PostgresDriver)
-	sql.Register("postgres", d)
+	sql.Register("postgres", d) // how this would have been done without duck typing ? Java example
 }

@@ -1,0 +1,9 @@
+
+BASED ON THE BOOK   --> https://learning.oreilly.com/library/view/concurrency-in-go/9781491941294/
+Concurrency in Go
+By Katherine Cox-Buday
+
+
+CODE EXAMPLES             ->       https://github.com/viggin543/go-concurrency
+
+LOTS OF GOOD STUFF

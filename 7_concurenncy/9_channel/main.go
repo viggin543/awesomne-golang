@@ -10,6 +10,8 @@ import (
 
 var wg sync.WaitGroup
 
+// 														DISCUSS SHORTLY
+//										SHARING BY COMMUNICATING vs COMMUNICATING BY SHARING
 func main() {
 	baton := make(chan int) // creating an unbuffered channel ( no buffer, every write will block until someone reads )
 

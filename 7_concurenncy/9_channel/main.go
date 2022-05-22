@@ -11,20 +11,20 @@ import (
 var wg sync.WaitGroup
 
 func main() {
-	baton := make(chan int)
+	baton := make(chan int) // creating an unbuffered channel ( no buffer, every write will block until someone reads )
 
 	wg.Add(1)
 
 	go Runner(baton)
 
-	baton <- 1
+	baton <- 1 // writing to a channel
 
 	wg.Wait()
 }
 
 func Runner(baton chan int) {
 	var newRunner int
-	runner := <-baton
+	runner := <-baton // reading from a channel and declaring a variable in one line
 
 	fmt.Printf("Runner %d Running With Baton\n", runner)
 

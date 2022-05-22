@@ -24,7 +24,7 @@ func main() {
 	go player("Nadal", court)
 	go player("Djokovic", court)
 
-	court <- 1
+	court <- 1 // writing to a channel. this blocks until some one reads
 
 	wg.Wait()
 }
@@ -35,7 +35,7 @@ func player(name string, court chan int) {
 
 	for {
 		// Wait for the ball to be hit back to us.
-		ball, ok := <-court
+		ball, ok := <-court // reading from a channel and checking if its closed
 		if !ok {
 			// If the channel was closed we won.
 			fmt.Printf("Player %s Won\n", name)

@@ -23,7 +23,7 @@ func init() {
 
 func main() {
 	// Create a buffered channel to manage the task load.
-	tasks := make(chan string, taskLoad)
+	tasks := make(chan string, taskLoad) // buffer allows writing without blocking, as long as the buffer is not full
 
 	// Launch goroutines to handle the work.
 	wg.Add(numberGoroutines)
@@ -51,7 +51,7 @@ func worker(tasks chan string, worker int) {
 
 	for {
 		// Wait for work to be assigned.
-		task, isClosed := <-tasks
+		task, isClosed := <-tasks // reading from a channel and checking if it is closed, into two new variables. in one line
 		if !isClosed {
 			// This means the channel is empty and closed.
 			fmt.Printf("Worker: %d : Shutting Down\n", worker)

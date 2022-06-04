@@ -1,30 +1,25 @@
-// This sample program demonstrates how to use a channel to
+// an example on how to use a channel to
 // monitor the amount of time the program is running and terminate
 // the program if it runs too long.
 package main
 
 import (
+	runner "github.com/viggin543/awesomne-golang/8_concurenncy_patterns/patterns/1_runner"
 	"log"
 	"os"
 	"time"
-
-	"github.com/viggin543/awesomne-golang/code/chapter7/patterns/runner"
 )
 
-// timeout is the number of second the program has to finish.
 const timeout = 3 * time.Second
 
-// main is the entry point for the program.
+// try running the main program and interrupt it ( ctrl+c ) b4 timeout hits
 func main() {
 	log.Println("Starting work.")
 
-	// Create a new timer value for this run.
 	r := runner.New(timeout)
 
-	// Add the tasks to be run.
 	r.Add(createTask(), createTask(), createTask())
 
-	// Run the tasks and handle the result.
 	if err := r.Start(); err != nil {
 		switch err {
 		case runner.ErrTimeout:
@@ -39,11 +34,9 @@ func main() {
 	log.Println("Process ended.")
 }
 
-// createTask returns an example task that sleeps for the specified
-// number of seconds based on the id.
 func createTask() func(int) {
 	return func(id int) {
-		log.Printf("Processor - Task #%d.", id)
+		log.Printf("Working... - Task #%d.", id)
 		time.Sleep(time.Duration(id) * time.Second)
 	}
 }

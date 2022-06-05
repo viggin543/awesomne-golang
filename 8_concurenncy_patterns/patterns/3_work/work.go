@@ -1,3 +1,5 @@
+// producer consumer pattern
+
 package __work
 
 import "sync"

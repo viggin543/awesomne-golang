@@ -4,14 +4,12 @@
 package main
 
 import (
+	search "github.com/viggin543/awesomne-golang/8_concurenncy_patterns/patterns/4_search"
 	"log"
-
-	"github.com/viggin543/awesomne-golang/code/chapter7/patterns/search"
 )
 
-// main is the entry point for all Go programs.
 func main() {
-	// Submit the search and display the results.
+
 	results := search.Submit(
 		"golang",
 		search.OnlyFirst,

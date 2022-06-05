@@ -1,4 +1,4 @@
-package bench_test
+package __benchmark_test_test
 
 import (
 	"fmt"

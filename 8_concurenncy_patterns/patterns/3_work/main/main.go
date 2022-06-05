@@ -29,9 +29,9 @@ func main() {
 	defer p.Shutdown()
 	var wg sync.WaitGroup
 	wg.Add(100 * len(names))
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 100; i++ { // PRODUCER PART
 		for _, name := range names {
-			np := namePrinter{name: name} // deep copies name
+			np := namePrinter{name: name} // deep copies name loop variable
 			go func() {
 				p.Run(&np) // what can happen if this line would be p.Run(&namePrinter{name: name}) ?
 				wg.Done()

@@ -1,0 +1,13 @@
+###
+
+# curl http://localhost:8080/hello
+GET http://localhost:8080/hello
+
+###
+GET http://localhost:8080/da.json
+###
+GET http://localhost:8080/
+###
+GET http://localhost:8080/hack
+
+

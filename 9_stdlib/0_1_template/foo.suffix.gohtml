@@ -1,0 +1,13 @@
+THIS IS VARY {{.FOO}}
+{{- range $val := .BAR}}
+     opa {{$val}}
+{{- end}}
+{{- range $k,$v := .BAZ}}
+     key: {{$k}} --- val: {{$v}}
+{{- end}}
+{{- if eq .FOO "FUN" }}
+ FOO is fun !! :)
+{{- else}}
+FOO is not fun :(
+{{end}}
+CHECK THIS OUT ---->  https://pkg.go.dev/text/template

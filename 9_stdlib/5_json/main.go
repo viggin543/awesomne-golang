@@ -1,4 +1,3 @@
-// This sample program demonstrates how to decode a JSON string.
 package main
 
 import (
@@ -7,7 +6,6 @@ import (
 	"log"
 )
 
-// JSON contains a sample string to unmarshal.
 var JSON = `{
 	"name": "Gopher",
 	"title": "programmer",
@@ -18,7 +16,6 @@ var JSON = `{
 }`
 
 func main() {
-	// Unmarshal the JSON string into our map variable.
 	var c map[string]interface{}
 	err := json.Unmarshal([]byte(JSON), &c)
 	if err != nil {

@@ -1,4 +1,3 @@
-// This sample program demonstrates how to marshal a JSON string.
 package main
 
 import (
@@ -8,8 +7,7 @@ import (
 )
 
 func main() {
-	// Create a map of key/value pairs.
-	c := make(map[string]interface{})
+	c := make(map[string]interface{}) // this can be a map literral
 	c["name"] = "Gopher"
 	c["title"] = "programmer"
 	c["contact"] = map[string]interface{}{
@@ -17,7 +15,6 @@ func main() {
 		"cell": "415.555.5555",
 	}
 
-	// Marshal the map into a JSON string.
 	data, err := json.MarshalIndent(c, "", "    ")
 	if err != nil {
 		log.Println("ERROR:", err)

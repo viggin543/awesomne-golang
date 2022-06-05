@@ -1,4 +1,3 @@
-// This sample program demonstrates how to create customized loggers.
 package main
 
 import (

@@ -1,4 +1,3 @@
-// Sample test to show how to write a basic example.
 package handlers_test
 
 import (
@@ -9,12 +8,10 @@ import (
 	"net/http/httptest"
 )
 
-// ExampleSendJSON provides a basic example.
-func ExampleSendJSON() {
+func ExampleSendJSON() { // IDEA CAN run this because this function name starts with Example ( a convention )
 	r, _ := http.NewRequest("GET", "/sendjson", nil)
-	w := httptest.NewRecorder()
+	w := httptest.NewRecorder() // NOTICE THERE IS NO CALL TO ListenAndServe
 	http.DefaultServeMux.ServeHTTP(w, r)
-
 	var u struct {
 		Name  string
 		Email string

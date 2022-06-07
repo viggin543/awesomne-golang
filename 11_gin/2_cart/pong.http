@@ -1,0 +1,16 @@
+###
+
+# curl localhost:8080/ping
+GET localhost:8080/ping
+
+###
+
+PUT localhost:8080/cart
+Content-Type: application/json
+
+{
+  "id": "iddqd",
+  "totalCetns": 100
+}
+
+

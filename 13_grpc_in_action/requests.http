@@ -1,0 +1,15 @@
+GRPC http://127.0.0.1:10000/cart.CartSvc/UpsertCart
+
+{
+  "id": "iddqd",
+  "totalCents": 100
+}
+
+###
+POST http://127.0.0.1:8080/cart
+Content-Type: application/json
+
+{
+  "id": "iddqd",
+  "totalCents": 100
+}

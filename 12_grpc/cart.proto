@@ -5,7 +5,7 @@ option go_package = "github.com/viggin543/awesomne-golang/12_grpc/gen";
 import "google/api/annotations.proto";
 
 service CartSvc {
-  rpc OneProduct (Cart) returns (Cart){
+  rpc UpsertCart (Cart) returns (Cart){
     option (google.api.http) = {
       post: "/cart"
       body: "*"

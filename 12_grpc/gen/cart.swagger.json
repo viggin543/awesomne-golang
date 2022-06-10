@@ -13,7 +13,7 @@
   "paths": {
     "/cart": {
       "post": {
-        "operationId": "CartSvc_OneProduct",
+        "operationId": "CartSvc_UpsertCart",
         "responses": {
           "200": {
             "description": "A successful response.",

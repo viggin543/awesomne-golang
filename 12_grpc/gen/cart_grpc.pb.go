@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CartSvcClient interface {
-	OneProduct(ctx context.Context, in *Cart, opts ...grpc.CallOption) (*Cart, error)
+	UpsertCart(ctx context.Context, in *Cart, opts ...grpc.CallOption) (*Cart, error)
 }
 
 type cartSvcClient struct {
@@ -33,9 +33,9 @@ func NewCartSvcClient(cc grpc.ClientConnInterface) CartSvcClient {
 	return &cartSvcClient{cc}
 }
 
-func (c *cartSvcClient) OneProduct(ctx context.Context, in *Cart, opts ...grpc.CallOption) (*Cart, error) {
+func (c *cartSvcClient) UpsertCart(ctx context.Context, in *Cart, opts ...grpc.CallOption) (*Cart, error) {
 	out := new(Cart)
-	err := c.cc.Invoke(ctx, "/cart.CartSvc/OneProduct", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cart.CartSvc/UpsertCart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,15 +46,15 @@ func (c *cartSvcClient) OneProduct(ctx context.Context, in *Cart, opts ...grpc.C
 // All implementations should embed UnimplementedCartSvcServer
 // for forward compatibility
 type CartSvcServer interface {
-	OneProduct(context.Context, *Cart) (*Cart, error)
+	UpsertCart(context.Context, *Cart) (*Cart, error)
 }
 
 // UnimplementedCartSvcServer should be embedded to have forward compatible implementations.
 type UnimplementedCartSvcServer struct {
 }
 
-func (UnimplementedCartSvcServer) OneProduct(context.Context, *Cart) (*Cart, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OneProduct not implemented")
+func (UnimplementedCartSvcServer) UpsertCart(context.Context, *Cart) (*Cart, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpsertCart not implemented")
 }
 
 // UnsafeCartSvcServer may be embedded to opt out of forward compatibility for this service.
@@ -68,20 +68,20 @@ func RegisterCartSvcServer(s grpc.ServiceRegistrar, srv CartSvcServer) {
 	s.RegisterService(&CartSvc_ServiceDesc, srv)
 }
 
-func _CartSvc_OneProduct_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CartSvc_UpsertCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Cart)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CartSvcServer).OneProduct(ctx, in)
+		return srv.(CartSvcServer).UpsertCart(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cart.CartSvc/OneProduct",
+		FullMethod: "/cart.CartSvc/UpsertCart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CartSvcServer).OneProduct(ctx, req.(*Cart))
+		return srv.(CartSvcServer).UpsertCart(ctx, req.(*Cart))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -94,8 +94,8 @@ var CartSvc_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*CartSvcServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "OneProduct",
-			Handler:    _CartSvc_OneProduct_Handler,
+			MethodName: "UpsertCart",
+			Handler:    _CartSvc_UpsertCart_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

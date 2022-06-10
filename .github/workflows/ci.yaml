@@ -1,0 +1,65 @@
+name: Go CI Pipeline
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  ci:
+    services:
+      mongodb:
+        image: bitnami/mongodb:latest
+        ports:
+          - 27017:27017
+        env:
+          MONGODB_ROOT_USER: "root"
+          MONGODB_ROOT_PASSWORD: "root"
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.18
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Load Cached Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('go.sum') }}
+          restore-keys: ${{ runner.os }}-go-
+
+      - name: Fetch dependencies
+        run: |
+          # configure go and git to allow accessing private golang repositories 
+          # git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/org-name".insteadOf "https://github.com/org-name"
+          # go env -w GOPRIVATE=github.com/org-name/*
+          cd 11_gin
+          go get -v -t -d ./...
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+
+      - name: Build go binary
+        run: |
+          CGO_ENABLED=0 go build -installsuffix 'static'  -v .
+
+      - name: Test
+        id: test
+        shell: bash
+        run: |
+          set -x
+          # after testing
+          cd 11_gin
+          go test  ./...
+        env:
+          MONGO_PASS: root
+          MONGO_USER: root
+
+
+

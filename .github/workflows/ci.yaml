@@ -47,6 +47,7 @@ jobs:
 
       - name: Build go binary
         run: |
+          cd 11_gin
           CGO_ENABLED=0 go build -installsuffix 'static'  -v .
 
       - name: Test

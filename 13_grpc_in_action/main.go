@@ -13,25 +13,16 @@ func main() {
 	var grpcOptions []grpc.ServerOption
 	unaryOpts := []grpc.UnaryServerInterceptor{
 		grpc_recovery.UnaryServerInterceptor(),
-		grpc_prometheus.UnaryServerInterceptor,
-		commons.RBACInterceptor(rbacRules),
 	}
-	if tracer != nil {
-		unaryOpts = append(unaryOpts, otgrpc.OpenTracingServerInterceptor(tracer))
-	}
+
 	unaryInterceptors := grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(unaryOpts...))
 
 	streamOpts := []grpc.StreamServerInterceptor{
 		grpc_recovery.StreamServerInterceptor(),
-		grpc_prometheus.StreamServerInterceptor,
-	}
-	if tracer != nil {
-		streamOpts = append(streamOpts, otgrpc.OpenTracingStreamServerInterceptor(tracer))
 	}
 	streamInterceptors := grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(streamOpts...))
 
-	options = append(options, unaryInterceptors, streamInterceptors)
-	server := grpc.NewServer(options...)
+	server := grpc.NewServer(unaryInterceptors, streamInterceptors)
 	server.RegisterService(&CatalogService_ServiceDesc, impl)
 	grpc_prometheus.Register(server)
 	grpc_prometheus.EnableHandlingTimeHistogram()

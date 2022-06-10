@@ -10,7 +10,6 @@ import (
 	"github.com/opentracing/opentracing-go"
 	cart "github.com/viggin543/awesomne-golang/12_grpc/gen"
 	grpc "google.golang.org/grpc"
-	"net"
 	"net/http"
 )
 
@@ -30,7 +29,7 @@ func (this *GrpcServer) UpsertCart(ctx context.Context, c *cart.Cart) (*cart.Car
 func main() {
 	impl := GrpcServer{}
 	NewGrpcServer(&impl)
-	NewRestGateway(8080, 10000, grpc.WithInsecure())
+	NewRestGateway(10000, grpc.WithInsecure())
 }
 
 func NewGrpcServer(impl cart.CartSvcServer) {
@@ -40,37 +39,7 @@ func NewGrpcServer(impl cart.CartSvcServer) {
 	server.RegisterService(&cart.CartSvc_ServiceDesc, impl)
 }
 
-func (this *GrpcServer) Start() error {
-	grpcLis, err := net.Listen("tcp", fmt.Sprintf("0.0.0.0:%d", this.grpcPort))
-	if err != nil {
-		return err
-	}
-
-	restLis, err := net.Listen("tcp", fmt.Sprintf("0.0.0.0:%d", this.restPort))
-	if err != nil {
-		return err
-	}
-
-	ch := make(chan error, 2)
-
-	go func() {
-		if err := this.grpcServer.Serve(grpcLis); err != nil {
-			ch <- err
-		}
-	}()
-
-	go func() {
-		if err := http.Serve(restLis, this.restServer); err != nil {
-			ch <- err
-		}
-	}()
-
-	<-ch
-
-	return nil
-}
-
-func NewRestGateway(restPort int, grpcDestPort int, opts ...grpc.DialOption) {
+func NewRestGateway(grpcDestPort int, opts ...grpc.DialOption) {
 	ctx := context.Background()
 
 	grpcMux := runtime.NewServeMux(
@@ -83,8 +52,6 @@ func NewRestGateway(restPort int, grpcDestPort int, opts ...grpc.DialOption) {
 	if err != nil {
 		panic(err)
 	}
-
-	restAddress := fmt.Sprintf(":%d", restPort)
 
 }
 

@@ -73,6 +73,8 @@ github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5Cc
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/viggin543/awesomne-golang/12_grpc v0.0.0-20220610134015-f9d33a218d26 h1:5e040dYKrXtflj+aWXsQS7gX8/VJ+1I76dggyW3z7HA=
 github.com/viggin543/awesomne-golang/12_grpc v0.0.0-20220610134015-f9d33a218d26/go.mod h1:x2BIWMZysa8OYOs8L7LaxwcHZAbE8Vvuf2YSlywYAqI=
+github.com/viggin543/awesomne-golang/12_grpc v0.0.0-20220610135218-1af6a954279b h1:J4ajB1jN5O3LDz7WplexRSRDy+/DH2ziGDg4qv5/8hc=
+github.com/viggin543/awesomne-golang/12_grpc v0.0.0-20220610135218-1af6a954279b/go.mod h1:x2BIWMZysa8OYOs8L7LaxwcHZAbE8Vvuf2YSlywYAqI=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 go.opentelemetry.io/proto/otlp v0.7.0/go.mod h1:PqfVotwruBrMGOCsRd/89rSnXhoiJIqeYNgFYFoEGnI=

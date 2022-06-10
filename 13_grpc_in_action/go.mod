@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
-	github.com/viggin543/awesomne-golang/12_grpc latest
+	github.com/viggin543/awesomne-golang/12_grpc v0.0.0-20220610135218-1af6a954279b
 	google.golang.org/grpc v1.47.0
 )
 

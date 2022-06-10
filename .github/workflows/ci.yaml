@@ -28,27 +28,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Load Cached Dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('go.sum') }}
-          restore-keys: ${{ runner.os }}-go-
-
       - name: Fetch dependencies
         run: |
           # configure go and git to allow accessing private golang repositories 
           # git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/org-name".insteadOf "https://github.com/org-name"
           # go env -w GOPRIVATE=github.com/org-name/*
-          cd 11_gin
           go get -v -t -d ./...
+        working-directory: 11_gin
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
 
       - name: Build go binary
         run: |
-          cd 11_gin
           CGO_ENABLED=0 go build -installsuffix 'static'  -v .
+        working-directory: 11_gin
 
       - name: Test
         id: test
@@ -56,8 +49,8 @@ jobs:
         run: |
           set -x
           # after testing
-          cd 11_gin
           go test  ./...
+        working-directory: 11_gin
         env:
           MONGO_PASS: root
           MONGO_USER: root

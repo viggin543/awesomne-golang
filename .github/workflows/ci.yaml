@@ -34,14 +34,14 @@ jobs:
           # git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/org-name".insteadOf "https://github.com/org-name"
           # go env -w GOPRIVATE=github.com/org-name/*
           go get -v -t -d ./...
-        working-directory: 11_gin
+        working-directory: 11_gin/2_cart
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
 
       - name: Build go binary
         run: |
           CGO_ENABLED=0 go build -installsuffix 'static'  -v .
-        working-directory: 11_gin
+        working-directory: 11_gin/2_cart
 
       - name: Test
         id: test
@@ -50,7 +50,7 @@ jobs:
           set -x
           # after testing
           go test  ./...
-        working-directory: 11_gin
+        working-directory: 11_gin/2_cart
         env:
           MONGO_PASS: root
           MONGO_USER: root

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package cart;
+
+option go_package = "github.com/viggin543/awesomne-golang/12_grpc/gen";
+import "google/api/annotations.proto";
+
+service CartSvc {
+  rpc OneProduct (Cart) returns (Cart){
+    option (google.api.http) = {
+      post: "/cart"
+      body: "*"
+    };
+  }
+}
+
+message Cart {
+  string id  =1;
+  int64 totalCents = 2;
+}

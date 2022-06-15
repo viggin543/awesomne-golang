@@ -42,7 +42,7 @@ func TestGenericSlice_Print(t *testing.T) {
 }
 
 func TestBox_equals(t *testing.T) {
-	var x = new(Box[int]) // generic structs must be instantiated ( using new or make, like channels )
+	x := Box[int]{}
 	x.Val = 123
 	assert.True(t, x.equals(123))
 }
